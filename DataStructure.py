@@ -104,7 +104,50 @@ print(a_set)
 num_list =[6,2,7,4,1,3,5]
 print(sorted(num_list))
 
-sorted(num_list,reverse=True)
+#推导式
+a = []
+for i in range(1,11):
+    a.append(i)
+print(a)
 
+#列表解析
+b = [i for i in range(1,11)]
+print(b)
 
+#时间对比
+import time
 
+a= []
+t0 = time.clock()
+for i in range(1,20000):
+    a.append(i)
+print(time.clock() - t0, "seconds process time")
+
+t0 = time.clock()
+b = [i for i in range(1,20000)]
+print(time.clock() - t0, "seconds process time")a= []
+
+#列表推导式
+list = [item for item in iterable]`
+
+a = [i**2 for i in range(1,10)]
+print(a)
+
+c = [j+1 for j in range(1,10)]
+print(c)
+
+k = [n for n in range(1,11) if n % 2 ==0]
+print(k)
+
+z = [letter.lower() for letter in 'ABCDEFGHIJKLMN']
+print(z)
+
+#字典推导式
+d = {i:i+1 for i in range(4)}
+print(d)
+
+g = {i:j for i,j in zip(range(1,6),'abcde')}
+print(g)
+
+g = {i:j.upper() for i,j in zip(range(1,6),'abcde')}
+print(g)
