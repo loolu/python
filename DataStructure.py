@@ -151,3 +151,12 @@ print(g)
 
 g = {i:j.upper() for i,j in zip(range(1,6),'abcde')}
 print(g)
+
+#循环列表时获取元素的索引
+letters = ['a','b','c']
+for num,letters in enumerate(letters):
+    print(letters,'is',num + 1)
+
+lyric = 'The night begin to shine, the night begin to shine'
+words = lyric.split()
+print(words)
