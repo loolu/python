@@ -13,3 +13,5 @@ print(CocaCola.formula)
 #类的属性和正常的变量并无区别
 for element in coke_for_me.formula:
     print(element)
+
+#实例属性
