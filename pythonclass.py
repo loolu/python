@@ -143,3 +143,11 @@ class TestA:
 obj_a = TestA()
 
 print(obj_a.attr)
+
+#类的扩展理解
+obj1 = 1
+obj2 = 'String!'
+obj3 = []
+obj4 = {}
+print(type(obj1),type(obj2),type(obj3),type(obj4))
+
