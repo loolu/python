@@ -160,3 +160,58 @@ for num,letters in enumerate(letters):
 lyric = 'The night begin to shine, the night begin to shine'
 words = lyric.split()
 print(words)
+
+
+'''
+列表和元组
+通用的序列操作
+'''
+#索引
+greeting = 'hello'
+#索引0指向第一个元素
+print(greeting[0])
+#使用负数索引，python将从右(即从最后一个元素)开始往左数，因此-1是最后一个元素的位置
+print(greeting[-1])
+
+#不赋值
+print('hello'[0])
+
+#调用函数返回一个序列，可直接对其进行索引操作
+fourth = input('year: ')[3]
+print(fourth)
+
+
+
+
+#索引操作示例：将以数制定年，月，日的日期打印出来
+months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+#一个列表，其中包含数1~31对应的结尾
+endings = ['st', 'nd', 'rd'] + 17 * ['th'] \
+        + ['st', 'nd', 'rd'] + 7 * ['th'] \
+        + ['st']
+
+#把列表的数据循环打印出来       
+for ending in endings:
+    print(ending)
+
+#获取用户输入内容
+year = input('Year: ')
+month = input('Month (1-12): ')
+day = input('Day (1-31): ')
+
+month_number = int(month)
+day_number = int(day)
+
+#月和日减1，得到正确的索引
+month_name = months[month_number-1]
+ordinal = day + endings[day_number-1]
+
+
+print(month_name + ' ' + ordinal + ',' + year)
+
+
+#切片
+tag = '<a href="http://www.python.org">Python web site</a>'
+print(tag[9:30])
+print(tag[32:-4])
