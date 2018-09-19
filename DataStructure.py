@@ -215,3 +215,26 @@ print(month_name + ' ' + ordinal + ',' + year)
 tag = '<a href="http://www.python.org">Python web site</a>'
 print(tag[9:30])
 print(tag[32:-4])
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(numbers[3:6])
+print(numbers[0:1])
+print(numbers[7:10])
+print(numbers[-3:-1])
+
+#第一个索引指定的元素位于第二个索引指定的元素后面，结果为空序列
+print(numbers[-3:0])
+
+#如果切片结束于序列末尾，可省略第二个索引
+print(numbers[-3:])
+
+#如果切片始于序列开头，可省略第一个索引
+print(numbers[:3])
+
+#复制整个序列
+print(numbers[:])
+
+#提取域名
+url = input('Please enter the URL:')
+domain = url[11:-4]
+print("Domain name: " + domain)
