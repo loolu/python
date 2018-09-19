@@ -238,3 +238,23 @@ print(numbers[:])
 url = input('Please enter the URL:')
 domain = url[11:-4]
 print("Domain name: " + domain)
+
+#更大的步长
+print(numbers[0:10:1])
+print(numbers[0:10:2])
+print(numbers[::4])
+
+#步长为负数
+print(numbers[8:3:-1])
+print(numbers[10:0:-2])
+print(numbers[0:10:-2])
+print(numbers[::-2])
+print(numbers[5::-2])
+print(numbers[:5:-2])
+'''
+第一个索引依然包含在内，而第二个索引不包含在内。步长为负数时，第一个索引必须比
+第二个索引大。当省略起始和结束索引时，python执行了正确的操作：步长为正数时，它
+从起点移到终点，而步长为负数时，它从终点移到起点。
+'''
+
+#序列相加
