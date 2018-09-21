@@ -260,3 +260,12 @@ print(numbers[:5:-2])
 '''
 
 #序列相加
+print([1, 2, 3] + [4, 5, 6])
+print('Hello,' + 'world!')
+
+#不能拼接列表和字符串
+print([1, 2, 3] + 'world!')
+
+#乘法
+print('python ' * 5)
+print([42] * 10)
