@@ -269,3 +269,242 @@ print([1, 2, 3] + 'world!')
 #乘法
 print('python ' * 5)
 print([42] * 10)
+
+#空列表
+sequence = [None] * 10
+print(sequence)
+
+#序列(字符串)乘法运算示例
+#在位于屏幕中央且宽度合适的方框内打印一个句子
+sentence = input("Sentence: ")
+
+screen_width = 80
+text_width = len(sentence)
+box_width = text_width + 6
+left_margin = (screen_width - box_width) // 2
+
+print()
+print(' ' * left_margin + '+'  + '-' * (box_width-2) +  '+')
+print(' ' * left_margin + '| ' + ' ' * text_width    + ' |')
+print(' ' * left_margin + '| ' +       sentence      + ' |')
+print(' ' * left_margin + '| ' + ' ' * text_width    + ' |')
+print(' ' * left_margin + '+'  + '-' * (box_width-2) +  '+')
+print()
+
+#成员资格
+permissions = 'rw'
+print('w' in permissions)
+print('x' in permissions)
+
+users = ['mlh', 'foo', 'bar']
+input('Enter your user name: ') in users
+
+subject = '$$$ Get rich now!!! $$$'
+print('$$$' in subject)
+
+#检查用户名和PIN码
+database = [
+    ['albert', '1234'],
+    ['dilbert', '4242'],
+    ['smith', '7524'],
+    ['jones', '9843']
+]
+
+username = input('User name: ')
+pin = input('PIN code: ')
+
+if [username, pin] in database: print('Access granted')
+
+
+numbers = [100, 34, 678]
+print(len(numbers))
+print(max(numbers))
+print(min(numbers))
+
+print(max(2,3))
+print(min(9,3,2,5))
+
+#列表
+print(list('Hello'))
+
+#基本的列表操作
+#给特定元素赋值
+x = [1, 1, 1]
+x[1] = 2
+print(x)
+
+#删除元素
+names = ['Alice', 'Beth', 'Cecil', 'Dee-Dee', 'Earl']
+del names[2]
+print(names)
+
+#给切片赋值
+name = list('Perl')
+print(name)
+
+name[2:] = list('ar')
+print(name)
+
+#插入新元素
+numbers = [1,5]
+numbers[1:1] = [2, 3, 4]
+print(numbers)
+
+numbers[1:4] = []
+print(numbers)
+
+#列表方法
+lst = [1, 2, 3]
+lst.append(4)
+print(lst)
+
+#clear
+lst.clear()
+print(lst)
+
+#清空列表
+lst[:] = []
+print(lst)
+
+#copy复制列表
+a = [1, 2, 3]
+b = a
+b[1] = 4
+print(a)
+
+#这类似于a[:]或list(a),它们都复制a
+b = a.copy()
+b[1] = 4
+print(a)
+
+#count
+print(['to', 'be', 'or', 'not', 'to', 'be'].count('to'))
+
+x = [[1, 2], 1, 1, [2, 1, [1, 2]]]
+print(x.count(1))
+print(x.count([1, 2]))
+
+#extend 添加多个值到列表末尾
+a = [1, 2, 3]
+b = [4, 5, 6]
+a.extend(b)
+print(a)
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+print(a + b)
+print(a)
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+a[len(a):] = b
+print(a)
+
+#index
+knights = ['We', 'are', 'the', 'knights', 'who', 'say', 'ni']
+knights.index('who')
+
+knights.index('aaa')
+
+print(knights[4])
+
+#insert
+numbers = [1, 2, 3, 4, 5, 6, 7]
+numbers.insert(3, 'four')
+#等价于
+numbers[3:3] = ['four']
+print(numbers)
+
+#pop
+x = [1, 2, 3]
+x.pop()
+print(x)
+x.pop(0)
+print(x)
+'''
+pop是唯一既修改列表又返回一个非None值的列表方法
+使用pop可实现一种常见的数据结构————栈(stack).栈就像一
+叠盘子，你可在上面添加盘子，还可以从上面取走盘子。最后加入的盘子最
+先取走，这被称为后进先出(LIFO)
+'''
+
+x = [1, 2, 3]
+x.append(x.pop())
+print(x)
+
+#remove方法 用于删除第一个为指定值的元素
+x = ['to', 'be', 'or', 'not', 'to', 'be']
+x.remove('be')
+print(x)
+
+x.remove('bee')
+
+#reverse
+#方法reverse按相反的顺序排列列表中的元素
+x = [1, 2, 3]
+x.reverse()
+print(x)
+
+#sort方法用于对列表就地排序， 对原来的列表进行修改，使其元素按顺序排列，而不是返回排序后的列表的副本
+x = [4, 6, 2, 1, 7, 9]
+x.sort()
+print(x)
+
+
+x = [4, 6, 2, 1, 7, 9]
+y = x.sort()
+print(y)
+
+#正确copy排序
+x = [4, 6, 2, 1, 7, 9]
+y = x.copy()
+y.sort()
+print(y)
+print(x)
+
+#使用sorted函数
+x = [4, 6, 2, 1, 7, 9]
+y = sorted(x)
+print(x)
+print(y)
+
+a = sorted('Python')
+print(a)
+a.reverse()
+print(a)
+
+#高级排序：方法sort两个可选参数:key和reverse
+#key=len
+x = ['aardvark', 'abalone', 'acme', 'add', 'aerate']
+x.sort(key=len)
+print(x)
+
+#reverse=True或False
+x = [4, 6, 2, 1, 7, 9]
+x.sort(reverse = True)
+print(x)
+
+x.sort(reverse = False)
+print(x)
+
+#元组:不可修改的序列
+print(1, 2, 3)
+print((1, 2, 3))
+#只有一个数的元组，加逗号
+print((42,))
+print(())
+
+print(3 * (40 + 2))
+print(3 * (40 + 2,))
+
+print(tuple([1, 2, 3]))
+print(tuple('abc'))
+print(tuple((1, 2, 3)))
+
+x = [1, 2, 3]
+print(x[1])
+print(x[0:2])
+
+#熟悉元组的作用:1.用作映射中的键. 2.有些内置函数和方法返回元组
+
+
